@@ -1,10 +1,11 @@
-import { ThemeProvider as ThemeUIThemeProvider } from "theme-ui";
 import type { Theme } from "theme-ui";
+import { ThemeProvider as ThemeUIThemeProvider } from "theme-ui";
 import {
   createTheme,
   ThemeProvider as MUIThemeProvider
 } from "@mui/material/styles";
 import { Grid } from "@mui/material";
+import { HelloWorld } from "./HelloWorld";
 
 const themeUITheme: Theme = {
   fonts: {
@@ -23,11 +24,7 @@ const muiTheme = createTheme();
 export default function App() {
   return (
     <MUIThemeProvider theme={muiTheme}>
-      <ThemeUIThemeProvider theme={themeUITheme}>
-        <div className="App">
-          <Grid>Hello world!</Grid>
-        </div>
-      </ThemeUIThemeProvider>
+      <Grid><HelloWorld/></Grid> 
     </MUIThemeProvider>
   );
 }
